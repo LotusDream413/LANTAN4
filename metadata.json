@@ -1,0 +1,8 @@
+{
+  "name": "Remix 山东省蓝碳智能监测与碳汇资产核算云平台",
+  "description": "面向国家级数媒大赛的山东省蓝碳智能监测与碳汇资产核算数字孪生WebGIS平台，融合海-气通量、卫星遥感反演与CCER资产化核算。",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

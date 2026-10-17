@@ -1,0 +1,239 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Custom scrollbars for high-tech telemetry */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(4, 13, 26, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(6, 182, 212, 0.3);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 182, 212, 0.6);
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(1000%); }
+}
+
+@keyframes currentFlow {
+  0% { stroke-dashoffset: 200; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.animate-current {
+  stroke-dasharray: 6 8;
+  animation: currentFlow 12s linear infinite;
+}
+
+.font-num {
+  font-family: 'Chakra Petch', 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Sci-fi tech corners */
+.tech-border {
+  position: relative;
+}
+.tech-border::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #06b6d4;
+  border-left: 2px solid #06b6d4;
+  pointer-events: none;
+}
+.tech-border::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 8px;
+  height: 8px;
+  border-bottom: 2px solid #06b6d4;
+  border-right: 2px solid #06b6d4;
+  pointer-events: none;
+}
+
+/* Leaflet Dark Digital Twin Custom Styling */
+.leaflet-container {
+  background: #030914 !important;
+  font-family: inherit;
+}
+.leaflet-popup-content-wrapper {
+  background: rgba(4, 13, 26, 0.95) !important;
+  color: #f1f5f9 !important;
+  border: 1px solid rgba(6, 182, 212, 0.4) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8), 0 0 15px rgba(6, 182, 212, 0.3) !important;
+  backdrop-filter: blur(8px) !important;
+  padding: 0 !important;
+}
+.leaflet-popup-content {
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+.leaflet-popup-tip {
+  background: rgba(4, 13, 26, 0.95) !important;
+  border: 1px solid rgba(6, 182, 212, 0.4) !important;
+  box-shadow: none !important;
+}
+.leaflet-container a.leaflet-popup-close-button {
+  color: #94a3b8 !important;
+  top: 8px !important;
+  right: 8px !important;
+  padding: 4px !important;
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 4px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.leaflet-container a.leaflet-popup-close-button:hover {
+  color: #38bdf8 !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+.leaflet-bar {
+  border: 1px solid rgba(6, 182, 212, 0.3) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+}
+.leaflet-bar a {
+  background-color: rgba(4, 13, 26, 0.85) !important;
+  color: #38bdf8 !important;
+  border-bottom: 1px solid rgba(6, 182, 212, 0.2) !important;
+}
+.leaflet-bar a:hover {
+  background-color: rgba(6, 182, 212, 0.2) !important;
+  color: #ffffff !important;
+}
+.leaflet-control-attribution {
+  background: rgba(4, 13, 26, 0.6) !important;
+  color: #64748b !important;
+  font-size: 9px !important;
+}
+.leaflet-control-attribution a {
+  color: #0ea5e9 !important;
+}
+
+/* Eliminate Leaflet's default white tooltip background, border, padding, and arrows */
+.leaflet-tooltip,
+.custom-flux-tooltip {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  color: inherit !important;
+}
+
+.leaflet-tooltip::before,
+.leaflet-tooltip::after,
+.leaflet-tooltip-top::before,
+.leaflet-tooltip-bottom::before,
+.leaflet-tooltip-left::before,
+.leaflet-tooltip-right::before {
+  display: none !important;
+  border: none !important;
+  border-color: transparent !important;
+}
+
+/* ========================================================
+   ENHANCED TABLE TYPOGRAPHY & READABILITY (大幅放大表格文字与间距)
+   ======================================================== */
+table {
+  font-size: 0.95rem !important;
+}
+
+table th {
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  padding-top: 0.85rem !important;
+  padding-bottom: 0.85rem !important;
+  letter-spacing: 0.02em !important;
+  color: #e2e8f0 !important;
+}
+
+table td {
+  font-size: 0.925rem !important;
+  padding-top: 0.85rem !important;
+  padding-bottom: 0.85rem !important;
+  line-height: 1.45rem !important;
+}/* ========================================================
+   ENHANCED GLOBAL SMALL TEXT TYPOGRAPHY (全局加粗放大所有小白字与次要文字)
+   ======================================================== */
+[class*="text-[7px]"], .text-\[7px\] {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: #f8fafc !important;
+}
+
+[class*="text-[8px]"], .text-\[8px\] {
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  color: #f8fafc !important;
+  letter-spacing: 0.02em;
+}
+
+[class*="text-[8.5px]"], .text-\[8\.5px\] {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #f8fafc !important;
+}
+
+[class*="text-[9px]"], .text-\[9px\] {
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  color: #f8fafc !important;
+}
+
+[class*="text-[9.5px]"], .text-\[9\.5px\] {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #f8fafc !important;
+}
+
+[class*="text-[10px]"], .text-\[10px\] {
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  color: #f8fafc !important;
+}
+
+[class*="text-[11px]"], .text-\[11px\] {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+
+/* Ensure secondary labels on dark cards have high clarity and contrast */
+.text-slate-400 {
+  color: #cbd5e1 !important; /* Bump slate-400 to slate-300 contrast */
+}
+.text-slate-500 {
+  color: #94a3b8 !important; /* Bump slate-500 to slate-400 contrast */
+}
+
