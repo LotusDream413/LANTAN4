@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: '/LANTAN2/', // 确保这里前后都有斜杠，且大小写与 GitHub 仓库名完全一致
+    base: '/LANTAN4/', // 确保这里前后都有斜杠，且大小写与 GitHub 仓库名完全一致
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
